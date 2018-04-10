@@ -5712,7 +5712,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       // Attach a dragenter handler to $el and all of its children. When the first
       // child is entered, trigger a draghoverstart event.
       $el.on("dragenter.dragHover", function (e) {
-        if (collection.size() === 0) {
+        if (collection.length === 0) {
           $el.trigger("draghoverstart" + ns, e.originalEvent);
         }
         // Every child that has fired dragenter is added to the collection.
@@ -5727,7 +5727,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
         collection = collection.not(e.originalEvent.target);
         // When the collection has no elements, all of the children have been
         // removed, and produce draghoverend event.
-        if (collection.size() === 0) {
+        if (collection.length === 0) {
           $el.trigger("draghoverend" + ns, e.originalEvent);
         }
       });
